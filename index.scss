@@ -96,12 +96,15 @@ body {
   display: flex;
   align-items: center;
   gap: 0.7em;
-
-  /* background: #f4f6fa; */
-
   border-radius: 8px;
   padding: 0.7em 0.5em;
   min-width: 0;
+  transition: background 0.18s, transform 0.18s;
+
+  &:hover {
+    background: #f4f6fa;
+    transform: scale(1.03);
+  }
 }
 
 .person--details-info-flex {
@@ -115,7 +118,6 @@ body {
     color: #79819a;
     word-break: break-all;
     margin: 0;
-    color: #79819a;
     font-family: "DM Sans", sans-serif;
     letter-spacing: 1%;
     font-weight: 400;
@@ -127,12 +129,27 @@ body {
     line-height: 18.18px;
     font-size: 0.98em;
     color: #47516b;
+    margin: 0;
+  }
+
+  .contact--title {
+    color: #1976d2;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1%;
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 0.1em;
   }
 }
 
 .svg--size {
   width: 28px;
   height: 28px;
+  border-radius: 50%;
+  background: #79819a;
+  padding: 4px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .svg--size-circle {
@@ -141,6 +158,11 @@ body {
   padding: 4px;
   object-fit: contain;
   display: inline-block;
+}
+.svg--size.no-circle {
+  border-radius: 0;
+  background: none;
+  padding: 0;
 }
 
 .projects-list {
@@ -233,7 +255,6 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
   margin-bottom: 2rem;
 }
 
@@ -257,7 +278,7 @@ hr {
 }
 
 .experience-location {
-  font-style: 400;
+  font-style: normal;
   color: #79819a;
 }
 
@@ -401,15 +422,14 @@ hr {
   }
 
   figcaption {
-    font-weight: 500;
-    color: #2e2e48;
+    font-weight: 600;
+    color: #1976d2;
     font-size: 1.05em;
     margin-bottom: 0.1em;
-    line-height: 18.18px;
   }
 
   p {
-    color: #79819a;
+    color: #555;
     font-size: 0.97em;
     margin: 0;
   }
