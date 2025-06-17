@@ -303,7 +303,61 @@ hr {
   margin: 0;
 }
 
-/* Responsive: stack logo and text on small screens if needed */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.tool-card {
+  background: #f7f9fc;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  box-shadow: 0 1px 4px rgba(25, 118, 210, 0.03);
+  transition: transform 0.18s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.18s;
+}
+.tool-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.1);
+  border-color: #1976d2;
+  z-index: 1;
+}
+.tool-card img {
+  display: block;
+  margin: 0 auto 0.3rem auto;
+  width: 38px;
+  height: 38px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.tool-card figcaption {
+  font-weight: 600;
+  color: #1976d2;
+  font-size: 1.05em;
+  margin-bottom: 0.1em;
+}
+.tool-card p {
+  color: #555;
+  font-size: 0.97em;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+  }
+  .tool-card {
+    padding: 0.8rem 0.3rem 0.5rem 0.3rem;
+  }
+}
 @media (max-width: 600px) {
   .experience-role {
     flex-direction: row;
