@@ -254,31 +254,41 @@ hr {
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .experience-item {
-  padding: 0 0 1rem 0;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 0.5rem 1.1rem 0.5rem;
+  transition: box-shadow 0.18s cubic-bezier(0.4, 2, 0.6, 1), transform 0.18s;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.08);
+    transform: translateY(-2px) scale(1.015);
+    background: #f9fafb;
+    z-index: 1;
+  }
 }
 
 .experience-meta {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.6em;
   font-size: 0.97em;
   color: #888;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
 }
 
 .experience-date {
-  font-weight: 400;
+  font-weight: 500;
   color: #47516b;
-  letter-spacing: 1%;
 }
 
 .experience-location {
-  font-style: normal;
   color: #79819a;
 }
 
@@ -286,12 +296,12 @@ hr {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.2em;
 }
 
 .experience-logo {
-  width: 50px;
-  height: 50px;
+  width: 40.4px;
+  height: 40.4px;
   object-fit: contain;
   border-radius: 8px;
   background: #fff;
@@ -299,16 +309,15 @@ hr {
 }
 
 .experience-title {
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 0.1em 0;
   font-size: 1.08em;
   color: #2e2e48;
-  letter-spacing: 0%;
 }
 
 .experience-company {
-  color: #2e2e48;
-  font-size: 14.14px;
+  color: #555;
+  font-size: 0.97em;
   margin: 0;
   font-weight: 500;
 }
@@ -317,11 +326,81 @@ hr {
   color: #79819a;
   font-size: 0.97em;
   font-weight: 400;
-  letter-spacing: 1%;
-  margin: 0;
-  line-height: 100%;
-  font-family: "DM Sans", sans-serif, serif;
+  margin: 0.5em 0 0 0;
+  line-height: 1.5;
 }
+
+// .experience-list {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+//   margin-bottom: 2rem;
+// }
+
+// .experience-item {
+//   padding: 0 0 1rem 0;
+// }
+
+// .experience-meta {
+//   display: flex;
+//   align-items: center;
+//   gap: 0.5em;
+//   font-size: 0.97em;
+//   color: #888;
+//   margin-bottom: 0.5em;
+// }
+
+// .experience-date {
+//   font-weight: 400;
+//   color: #47516b;
+//   letter-spacing: 1%;
+// }
+
+// .experience-location {
+//   font-style: normal;
+//   color: #79819a;
+// }
+
+// .experience-role {
+//   display: flex;
+//   align-items: center;
+//   gap: 1rem;
+//   margin-bottom: 0.4em;
+// }
+
+// .experience-logo {
+//   width: 50px;
+//   height: 50px;
+//   object-fit: contain;
+//   border-radius: 8px;
+//   background: #fff;
+//   border: 1px solid #e0e0e0;
+// }
+
+// .experience-title {
+//   font-weight: 500;
+//   margin: 0 0 0.1em 0;
+//   font-size: 1.08em;
+//   color: #2e2e48;
+//   letter-spacing: 0%;
+// }
+
+// .experience-company {
+//   color: #2e2e48;
+//   font-size: 14.14px;
+//   margin: 0;
+//   font-weight: 500;
+// }
+
+// .experience-description {
+//   color: #79819a;
+//   font-size: 0.97em;
+//   font-weight: 400;
+//   letter-spacing: 1%;
+//   margin: 0;
+//   line-height: 100%;
+//   font-family: "DM Sans", sans-serif, serif;
+// }
 
 .education-list {
   display: flex;
