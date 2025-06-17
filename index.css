@@ -227,17 +227,14 @@ hr {
   gap: 0.5rem;
 }
 
-/* ...existing code... */
 .experience-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  /* space between experience cards */
   margin-bottom: 2rem;
 }
 
 .experience-item {
-  /* No border, no background for seamless look */
   padding: 0 0 1rem 0;
 }
 

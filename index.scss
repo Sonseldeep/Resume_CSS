@@ -130,14 +130,6 @@ body {
   }
 }
 
-// .contact--title {
-//   color: #79819a;
-//   font-family: "DM Sans", sans-serif;
-//   letter-spacing: 1%;
-//   font-weight: 400;
-//   font-size: 12.12px;
-// }
-
 .svg--size {
   width: 28px;
   height: 28px;
@@ -237,19 +229,15 @@ hr {
   gap: 0.5rem;
 }
 
-/* ...existing code... */
-
 .experience-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 
-  /* space between experience cards */
   margin-bottom: 2rem;
 }
 
 .experience-item {
-  /* No border, no background for seamless look */
   padding: 0 0 1rem 0;
 }
 
