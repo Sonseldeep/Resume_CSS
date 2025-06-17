@@ -96,6 +96,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.1em;
+  line-height: 1.5;
 
   span,
   p {
@@ -109,6 +110,14 @@ body {
 .svg--size {
   width: 28px;
   height: 28px;
+}
+
+.svg--size-circle {
+  border-radius: 50%;
+  background: #d3d6e0;
+  padding: 4px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .projects-list {
@@ -318,6 +327,15 @@ hr {
 .tool-card {
   background: #f7f9fc;
   border: 1.5px solid #e0e0e0;
+  .svg--size {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #79819a;
+    padding: 4px;
+    object-fit: contain;
+    display: inline-block;
+  }
   border-radius: 12px;
   padding: 1.1rem 0.5rem 0.7rem 0.5rem;
   display: flex;

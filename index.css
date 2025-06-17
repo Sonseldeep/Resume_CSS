@@ -95,6 +95,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.1em;
+  line-height: 1.5;
 }
 .person--details-info-flex span,
 .person--details-info-flex p {
@@ -107,6 +108,15 @@ body {
 .svg--size {
   width: 28px;
   height: 28px;
+}
+
+.svg--size-circle {
+  border-radius: 50%;
+  background: #d3d6e0;
+  padding: 4px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: inline-block;
 }
 
 .projects-list {
@@ -322,6 +332,16 @@ hr {
   gap: 0.5rem;
   box-shadow: 0 1px 4px rgba(25, 118, 210, 0.03);
   transition: transform 0.18s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.18s;
+}
+.tool-card .svg--size {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #79819a;
+  padding: 4px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: inline-block;
 }
 .tool-card:hover {
   transform: scale(1.04);
