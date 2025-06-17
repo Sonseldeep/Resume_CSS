@@ -42,8 +42,11 @@ body {
 }
 
 .profile--name {
+  color: #2e2e48;
+  font-weight: 500;
   font-size: 1.5rem;
   margin-bottom: 0.2em;
+  letter-spacing: -2%;
 }
 
 .profile--role {
@@ -54,15 +57,24 @@ body {
 
 .profile--quotes {
   font-style: italic;
-  color: #444;
+  color: #47516b;
+  font-weight: 500;
+  font-size: 18.18px;
   margin: 0.5em 0 0 0;
   display: block;
+  line-height: 24.24px;
+  letter-spacing: 2%;
 }
 
 .profile--quotes--author {
-  font-size: 0.95em;
-  color: #888;
+  font-size: 12.12px;
+  color: #79819a;
+  font-weight: 400;
   margin-top: 0.2em;
+  letter-spacing: 1;
+  line-height: 16.16px;
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
 }
 
 .section-title {
@@ -98,14 +110,33 @@ body {
   gap: 0.1em;
   line-height: 1.5;
 
-  span,
-  p {
+  span {
     font-size: 0.98em;
-    color: #222;
+    color: #79819a;
     word-break: break-all;
     margin: 0;
+    color: #79819a;
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 1%;
+    font-weight: 400;
+  }
+  p {
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 0%;
+    font-weight: 500;
+    line-height: 18.18px;
+    font-size: 0.98em;
+    color: #47516b;
   }
 }
+
+// .contact--title {
+//   color: #79819a;
+//   font-family: "DM Sans", sans-serif;
+//   letter-spacing: 1%;
+//   font-weight: 400;
+//   font-size: 12.12px;
+// }
 
 .svg--size {
   width: 28px;
@@ -153,21 +184,34 @@ body {
 }
 
 .project-title {
-  font-weight: 600;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
   margin-bottom: 0.2em;
-  font-size: 1em;
+  line-height: 20.2px;
+  font-size: 16.16px;
+  color: #2e2e48;
+  letter-spacing: 0%;
+  width: 318.22px;
+  height: 21px;
 }
 
 .project-subtitle {
-  color: #555;
+  color: #79819a;
   font-size: 0.95em;
+  font-weight: 400;
+  font-family: "DM Sans", serif;
+  letter-spacing: 1%;
+  line-height: 18.18px;
 }
 
 .project-link a {
-  color: #1976d2;
+  color: #516cf7;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
   word-break: break-all;
+  line-height: 20.2px;
+  letter-spacing: 0%;
 
   &:hover {
     text-decoration: underline;
@@ -219,12 +263,14 @@ hr {
 }
 
 .experience-date {
-  font-weight: 500;
-  color: #1976d2;
+  font-weight: 400;
+  color: #47516b;
+  letter-spacing: 1%;
 }
 
 .experience-location {
-  font-style: normal;
+  font-style: 400;
+  color: #79819a;
 }
 
 .experience-role {
@@ -244,23 +290,28 @@ hr {
 }
 
 .experience-title {
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0 0.1em 0;
   font-size: 1.08em;
-  color: #222;
+  color: #2e2e48;
+  letter-spacing: 0%;
 }
 
 .experience-company {
-  color: #555;
-  font-size: 0.97em;
+  color: #2e2e48;
+  font-size: 14.14px;
   margin: 0;
+  font-weight: 500;
 }
 
 .experience-description {
-  color: #444;
+  color: #79819a;
   font-size: 0.97em;
+  font-weight: 400;
+  letter-spacing: 1%;
   margin: 0;
-  line-height: 1.5;
+  line-height: 100%;
+  font-family: "DM Sans", sans-serif, serif;
 }
 
 .education-list {
@@ -362,14 +413,15 @@ hr {
   }
 
   figcaption {
-    font-weight: 600;
-    color: #1976d2;
+    font-weight: 500;
+    color: #2e2e48;
     font-size: 1.05em;
     margin-bottom: 0.1em;
+    line-height: 18.18px;
   }
 
   p {
-    color: #555;
+    color: #79819a;
     font-size: 0.97em;
     margin: 0;
   }
