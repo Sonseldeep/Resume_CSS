@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background: #f7f8fa;
   margin: 0;
@@ -29,7 +30,8 @@ body {
   width: 100%;
   height: auto;
   border-radius: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 1rem;
   border: none;
   display: block;
@@ -84,7 +86,6 @@ body {
   align-items: center;
   gap: 0.7em;
   /* background: #f4f6fa; */
-
   border-radius: 8px;
   padding: 0.7em 0.5em;
   min-width: 0;
@@ -95,7 +96,6 @@ body {
   flex-direction: column;
   gap: 0.1em;
 }
-
 .person--details-info-flex span,
 .person--details-info-flex p {
   font-size: 0.98em;
@@ -117,7 +117,6 @@ body {
 
 .first--project-container {
   background: #f9fafb;
-
   border-radius: 10px;
   padding: 1rem 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
@@ -130,11 +129,11 @@ body {
   gap: 1rem;
   margin-bottom: 0.7rem;
 }
-
 .project-top-flex img {
   height: 32px;
   width: 32px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   display: block;
 }
 
@@ -159,7 +158,6 @@ body {
   font-weight: 500;
   word-break: break-all;
 }
-
 .project-link a:hover {
   text-decoration: underline;
 }
@@ -184,11 +182,11 @@ hr {
 }
 
 /* ...existing code... */
-
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* space between experience cards */
+  gap: 2rem;
+  /* space between experience cards */
   margin-bottom: 2rem;
 }
 
@@ -225,7 +223,8 @@ hr {
 .experience-logo {
   width: 50px;
   height: 50px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 8px;
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -268,7 +267,6 @@ hr {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.2s;
 }
-
 .education-box:hover {
   transform: scale(1.04);
   box-shadow: 0 4px 16px rgba(25, 118, 210, 0.1);
@@ -320,7 +318,6 @@ hr {
     gap: 1.2rem;
   }
 }
-
 /* Desktop styles */
 @media (min-width: 601px) {
   .container {
@@ -333,7 +330,8 @@ hr {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin-bottom: 1rem;
     border: 3px solid #e0e0e0;
     max-width: none;
@@ -349,4 +347,4 @@ hr {
     height: 38px;
     width: 38px;
   }
-}
+}/*# sourceMappingURL=index.css.map */
