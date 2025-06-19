@@ -307,7 +307,7 @@ hr {
   font-weight: 600;
   margin: 0 0 0.1em 0;
   font-size: 1.08em;
-  color: #2e2e48;
+  color: #79819a;
 }
 
 .experience-company {
@@ -445,63 +445,60 @@ hr {
 .skills-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 2.5rem;
-  align-items: stretch;
+  gap: 1.5rem;
+  align-items: flex-start;
   margin-bottom: 2rem;
 }
 
 .skills-logo-left-container {
   display: flex;
-  min-width: 110px;
-  font-weight: 200;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 90px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #2e2e48;
+  text-align: center;
 }
 
 .skills-description-right-container {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 1rem;
   flex: 1;
-  min-width: 220px;
-  max-width: 380px;
+  min-width: 0;
+}
+
+.skills-row,
+.skills-col,
+.skills-list-box {
+  background: #f7f8fa;
+  border: 1px solid #eef0f4;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+  color: #9251f7;
 }
 
 .skills-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  font-weight: 600;
-  font-size: 1.08rem;
-  color: #9251f7;
-  background: #f7f8fa;
-  border-radius: 8px;
-  padding: 0.7rem 1rem;
+  gap: 1rem;
 }
 
 .skills-col {
   display: flex;
   flex-direction: column;
   gap: 0.2em;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #9251f7;
-  background: #f7f8fa;
-  border-radius: 8px;
-  padding: 0.7rem 1rem;
 }
 
 .skills-list-box {
-  background: #f7f8fa;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(231, 84, 128, 0.08);
   padding: 1rem 1.2rem;
-  margin-bottom: 0;
 }
 .skills-list-box ul {
   margin: 0;
-  color: #9251f7;
   padding-left: 1.2em;
   list-style: disc;
   font-size: 1rem;
@@ -510,16 +507,24 @@ hr {
   margin-bottom: 0.2em;
 }
 
-.skill-logo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-}
-
 .skill-title {
   margin-bottom: 1.25rem;
 }
 
+.skills-description-container-blue {
+  color: #516cf7;
+}
+
+@media (min-width: 768px) {
+  .skills-description-right-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .skills-description-right-container > * {
+    flex: 1 1 180px;
+  }
+}
 .footer {
   text-align: center;
   color: #888;
