@@ -16,7 +16,10 @@ body {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-  padding: 1rem 0.5rem;
+}
+
+section {
+  padding-left: 1rem;
 }
 
 hr {
@@ -26,8 +29,14 @@ hr {
   margin: 2rem auto;
 }
 
+#social-title,
+#language-title,
+#contact-title {
+  color: #79819a;
+}
+
 .section-title {
-  color: #333;
+  color: #2e2e48;
   font-size: 1.1rem;
   margin: 1.2rem 0 0.7rem 0;
   padding: 0;
@@ -72,7 +81,6 @@ hr {
 }
 
 .profile--quotes {
-  font-style: italic;
   color: #47516b;
   font-weight: 500;
   font-size: 18.18px;
@@ -91,6 +99,7 @@ hr {
   line-height: 16.16px;
   font-family: "DM Sans", sans-serif;
   text-align: center;
+  letter-spacing: 1%;
 }
 
 .person--details {
@@ -139,17 +148,24 @@ hr {
   margin: 0;
 }
 .person--details-info-flex .contact--title {
-  color: #1976d2;
+  color: #79819a;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 1%;
   font-family: "DM Sans", sans-serif;
   margin-bottom: 0.1em;
 }
+.person--details-info-flex .contact--description,
+.person--details-info-flex a {
+  color: #47516b;
+  font-weight: 500;
+  line-height: 18.18px;
+  font-size: 14.14px;
+}
 
 .svg--size {
-  width: 28px;
-  height: 28px;
+  width: 32.32px;
+  height: 32.32px;
   border-radius: 50%;
   background: #79819a;
   padding: 4px;
@@ -537,6 +553,19 @@ hr {
     display: flex;
     gap: 2rem;
   }
+  .profile--img {
+    width: 355.56px;
+    height: 161.62px;
+  }
+  .img-details {
+    padding-left: 1rem;
+  }
+  .desktop-view-right {
+    padding-top: 64.65px;
+    padding-right: 48.48px;
+    padding-left: 32.32px;
+    padding-bottom: 64.65px;
+  }
   .profile--name,
   .profile--role,
   .profile--quotes,
@@ -572,14 +601,23 @@ hr {
     max-width: 340px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .projects-list {
     flex-direction: column;
     gap: 1.2rem;
+    width: 763.64px;
+    height: 282.74px;
+    gap: 32.32px;
   }
   .first--project-container {
     max-width: 100%;
     min-width: 0;
     flex: 1 1 100%;
+  }
+  .experience-title {
+    width: 698.99px;
+    height: 435.99px;
+    gap: 32.32px;
+    padding-bottom: 48.48px;
   }
 }/*# sourceMappingURL=index.css.map */
