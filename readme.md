@@ -1,55 +1,94 @@
-# 🎓 Responsive Resume Template using HTML & SCSS
+# 🎓 Responsive Resume Template
 
-This project is a **responsive resume template** built with **HTML5** and **SCSS**, crafted as part of the **Leapfrog Student Partnership 2025** program. It showcases a clean, modern layout optimized for both mobile and desktop views, making it ideal for developers and designers looking to build or showcase their resume in a stylish web format.
+A modern, fully responsive resume template built with **HTML5** and **SCSS**. Designed for developers and designers to showcase their skills and experience in a clean, professional web format. Created as part of the **Leapfrog Student Partnership 2025** program.
 
-## 🔥 Features
+---
 
-- 📱 **Mobile-first** design
-- 💻 Desktop layout with adaptive sections
-- 🎨 Built using **SCSS** with BEM naming convention
-- 💼 Sections for profile, experience, education, skills, and contact
-- 💡 Easy to customize and extend
-- ✅ Clean and semantic HTML5
-- 🌐 Fully responsive and cross-browser compatible
+## 📋 Table of Contents
 
-## 🚀 Getting Started
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+- [Customization](#customization)
+- [Folder Structure](#folder-structure)
+- [Tools Used](#tools-used)
+- [Acknowledgements](#acknowledgements)
 
-To view the resume in your browser:
+---
 
-1. Clone the repository:
+## ✨ Features
 
-   ```bash
-   git clone https://github.com/Sonseldeep/Resume_CSS.git
+- **Mobile-first** responsive design
+- **Clean, semantic HTML5** structure
+- **SCSS** with BEM methodology for maintainable styles
+- Sections for **Profile**, **Experience**, **Education**, **Skills**, and **Contact**
+- Easy to **customize** and extend
+- **Cross-browser** compatibility
 
-   cd Resume_CSS
+---
 
-   ```
+---
 
-## Open index.html
+## 🏁 Getting Started
 
-```bash
-  To make custom edits, you can modify the SCSS and recompile it using a SCSS preprocessor like:
-
-
-sass scss/style.scss css/style.css
-```
-
-## 🛠️ Tools Used
+### 1. Clone the Repository
 
 ```bash
-HTML5
-
-SCSS (Sass)
-
-BEM Methodology
-
-VS Code
+git clone https://github.com/Sonseldeep/Resume_CSS.git
+cd Resume_CSS
 ```
 
-## 🙌 Acknowledgements
+### 2. Open in Browser
 
-```bash
- Special thanks to the mentors and reviewers at Leapfrog Student Partnership 2025.
+Open `index.html` directly in your browser to view the resume.
 
-Inspired by modern portfolio/resume design principles and web development best practices.
+---
+
+## 🛠️ Customization
+
+### Edit Content
+
+- Update your information in `index.html` under the relevant sections.
+
+### Modify Styles
+
+- Edit SCSS files in the `scss/` directory.
+- Recompile SCSS to CSS:
+
+  ```bash
+  sass scss/style.scss css/style.css
+  ```
+
+  _(Requires [Sass](https://sass-lang.com/install) to be installed)_
+
+---
+
+## 📁 Folder Structure
+
 ```
+Resume_CSS/
+├── css/
+│   └── style.css
+├── scss/
+│   └── style.scss
+├── index.html
+└── README.md
+```
+
+---
+
+## 🧰 Tools Used
+
+- **HTML5**
+- **SCSS (Sass)**
+- **BEM Methodology**
+- **Visual Studio Code**
+
+---
+
+## 🙏 Acknowledgements
+
+- Special thanks to the mentors and reviewers at **Leapfrog Student Partnership 2025**.
+- Inspired by modern portfolio and resume design principles.
+
+---
