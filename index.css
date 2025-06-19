@@ -11,7 +11,6 @@ body {
 }
 
 .container {
-  max-width: 700px;
   margin: 0 auto;
   background: #fff;
   border-radius: 16px;
@@ -515,4 +514,29 @@ hr {
 
 .skill-title {
   margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+  .desktop-view-left {
+    min-width: 356px;
+    background: #f7f9fc;
+  }
+  .person--details {
+    display: flex;
+    flex-direction: column;
+  }
+  .desktop-expereience-wrapper {
+    display: flex;
+  }
+  .desktop-expereience-meta {
+    min-width: 300px;
+  }
+  .desktop-expereience-description {
+    min-width: 250px;
+    flex-shrink: inherit;
+  }
 }/*# sourceMappingURL=index.css.map */
