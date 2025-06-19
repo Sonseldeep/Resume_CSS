@@ -17,6 +17,12 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
 }
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+}
 
 section {
   padding-left: 1rem;
@@ -29,12 +35,6 @@ hr {
   margin: 2rem auto;
 }
 
-#social-title,
-#language-title,
-#contact-title {
-  color: #79819a;
-}
-
 .section-title {
   color: #2e2e48;
   font-size: 1.1rem;
@@ -43,9 +43,16 @@ hr {
   font-weight: 600;
 }
 
+#social-title,
+#language-title,
+#contact-title {
+  color: #79819a;
+}
+
 .profile-header {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: stretch;
   margin-bottom: 1.5rem;
 }
@@ -61,106 +68,142 @@ hr {
   display: block;
   max-width: 100%;
 }
+@media (min-width: 768px) {
+  .profile--img {
+    width: 355.56px;
+    height: 161.62px;
+  }
+}
 
 .img-details {
   text-align: center;
 }
+@media (min-width: 768px) {
+  .img-details {
+    padding-left: 1rem;
+  }
+}
 
 .profile--name {
-  color: #2e2e48;
-  font-weight: 500;
   font-size: 1.5rem;
-  margin-bottom: 0.2em;
+  font-weight: 500;
+  color: #2e2e48;
+  font-family: "Segoe UI", Arial, sans-serif;
   letter-spacing: -2%;
+  margin-bottom: 0.2em;
 }
 
 .profile--role {
-  color: #1976d2;
-  margin-bottom: 0.7em;
   font-size: 1.1rem;
+  font-weight: normal;
+  color: #1976d2;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin-bottom: 0.7em;
 }
 
 .profile--quotes {
-  color: #47516b;
-  font-weight: 500;
   font-size: 18.18px;
+  font-weight: 500;
+  color: #47516b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 2%;
   margin: 0.5em 0 0 0;
   display: block;
   line-height: 24.24px;
-  letter-spacing: 2%;
 }
 
 .profile--quotes--author {
   font-size: 12.12px;
-  color: #79819a;
   font-weight: 400;
-  margin-top: 0.2em;
-  letter-spacing: 1;
-  line-height: 16.16px;
+  color: #79819a;
   font-family: "DM Sans", sans-serif;
-  text-align: center;
   letter-spacing: 1%;
+  margin-top: 0.2em;
+  line-height: 16.16px;
+  text-align: center;
 }
 
+@media (min-width: 768px) {
+  .profile--name,
+  .profile--role,
+  .profile--quotes,
+  .profile--quotes--author {
+    text-align: start;
+  }
+}
 .person--details {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1.2rem;
 }
+@media (min-width: 768px) {
+  .person--details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+}
 
 .person--details-info {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.7em;
   border-radius: 8px;
   padding: 0.7em 0.5em;
   min-width: 0;
-  transition: background 0.18s, transform 0.18s;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
 }
 .person--details-info:hover {
   background: #f7f8fa;
   transform: scale(1.03);
+  z-index: 1;
 }
 
 .person--details-info-flex {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0.1em;
   line-height: 1.5;
 }
 .person--details-info-flex span {
   font-size: 0.98em;
+  font-weight: 400;
   color: #79819a;
-  word-break: break-all;
-  margin: 0;
   font-family: "DM Sans", sans-serif;
   letter-spacing: 1%;
-  font-weight: 400;
+  word-break: break-all;
+  margin: 0;
 }
 .person--details-info-flex p {
+  font-size: 0.98em;
+  font-weight: 500;
+  color: #47516b;
   font-family: "DM Sans", sans-serif;
   letter-spacing: 0%;
-  font-weight: 500;
   line-height: 18.18px;
-  font-size: 0.98em;
-  color: #47516b;
   margin: 0;
 }
 .person--details-info-flex .contact--title {
-  color: #79819a;
-  font-weight: 600;
   font-size: 13px;
-  letter-spacing: 1%;
+  font-weight: 600;
+  color: #79819a;
   font-family: "DM Sans", sans-serif;
+  letter-spacing: 1%;
   margin-bottom: 0.1em;
 }
 .person--details-info-flex .contact--description,
 .person--details-info-flex a {
-  color: #47516b;
-  font-weight: 500;
-  line-height: 18.18px;
   font-size: 14.14px;
+  font-weight: 500;
+  color: #47516b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 18.18px;
 }
 
 .svg--size {
@@ -191,9 +234,17 @@ hr {
 .projects-list {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
   width: 100%;
+}
+@media (max-width: 767px) {
+  .projects-list {
+    flex-direction: column;
+    gap: 32.32px;
+  }
 }
 
 .first--project-container {
@@ -207,13 +258,24 @@ hr {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 0.8rem;
   word-break: break-word;
   overflow-wrap: anywhere;
 }
+@media (max-width: 767px) {
+  .first--project-container {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
 
 .project-top-flex {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.7rem;
@@ -231,32 +293,33 @@ hr {
 }
 
 .project-title {
+  font-size: 16.16px;
   font-weight: 500;
+  color: #2e2e48;
   font-family: "DM Sans", sans-serif;
+  letter-spacing: 0%;
   margin-bottom: 0.2em;
   line-height: 20.2px;
-  font-size: 16.16px;
-  color: #2e2e48;
-  letter-spacing: 0%;
 }
 
 .project-subtitle {
-  color: #79819a;
   font-size: 0.95em;
   font-weight: 400;
-  font-family: "DM Sans", sans-serif, serif;
+  color: #79819a;
+  font-family: "DM Sans", sans-serif;
   letter-spacing: 1%;
   line-height: 18.18px;
 }
 
 .project-link a {
-  color: #516cf7;
-  text-decoration: none;
+  font-size: inherit;
   font-weight: 600;
+  color: #516cf7;
   font-family: "Outfit", sans-serif;
+  letter-spacing: 0%;
+  text-decoration: none;
   word-break: break-all;
   line-height: 20.2px;
-  letter-spacing: 0%;
 }
 .project-link a:hover {
   text-decoration: underline;
@@ -265,6 +328,8 @@ hr {
 .experience-list {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -286,6 +351,8 @@ hr {
 
 .experience-meta {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.6em;
   font-size: 0.97em;
@@ -304,6 +371,8 @@ hr {
 
 .experience-role {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.2em;
@@ -320,32 +389,68 @@ hr {
 }
 
 .experience-title {
-  font-weight: 600;
-  margin: 0 0 0.1em 0;
   font-size: 1.08em;
+  font-weight: 600;
   color: #79819a;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0 0 0.1em 0;
 }
 
 .experience-company {
-  color: #555;
   font-size: 0.97em;
-  margin: 0;
   font-weight: 500;
+  color: #555;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
 }
 
 .experience-description {
-  color: #79819a;
   font-size: 0.97em;
   font-weight: 400;
+  color: #79819a;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0.5em 0 0 0;
   line-height: 1.5;
 }
 
+@media (min-width: 768px) {
+  .desktop-view-right {
+    padding: 64.65px 48.48px 64.65px 32.32px;
+  }
+  .desktop-view-left {
+    min-width: 356px;
+    background: #f7f9fc;
+  }
+  .desktop-expereience-wrapper {
+    display: flex;
+  }
+  .desktop-expereience-meta {
+    min-width: 300px;
+  }
+  .desktop-expereience-description {
+    min-width: 250px;
+    flex-shrink: inherit;
+  }
+}
 .education-list {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 1.2rem;
   margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .education-list {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .education-list .education-box {
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 340px;
+  }
 }
 
 .education-box {
@@ -354,6 +459,8 @@ hr {
   padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 0.7rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.2s;
@@ -366,31 +473,40 @@ hr {
 
 .logo-name-wrapper {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.7rem;
 }
 
 .education-name {
+  font-size: 1.05em;
   font-weight: 500;
   color: #2e2e48;
-  font-size: 1.05em;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .education--title-date {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0.2rem;
 }
 
 .education-title {
+  font-size: inherit;
   font-weight: 600;
   color: #222;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
 }
 
 .education-date {
-  color: #888;
   font-size: 0.97em;
+  font-weight: normal;
+  color: #888;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
 }
 
@@ -409,9 +525,10 @@ hr {
   padding: 1.2rem 0.7rem 0.8rem 0.7rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
   gap: 0.6rem;
+  text-align: center;
   box-shadow: 0 2px 10px rgba(25, 81, 210, 0.06);
   transition: box-shadow 0.2s cubic-bezier(0.4, 2, 0.6, 1), border-color 0.2s, transform 0.18s;
   min-width: 0;
@@ -443,32 +560,35 @@ hr {
   box-shadow: 0 1px 4px rgba(81, 108, 247, 0.07);
 }
 .tool-card figcaption {
+  font-size: 1.08em;
   font-weight: 700;
   color: #22336b;
-  font-size: 1.08em;
-  margin-bottom: 0.1em;
-  letter-spacing: 0.5px;
   font-family: "Outfit", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.1em;
 }
 .tool-card p {
-  color: #5a5a7a;
   font-size: 0.97em;
-  margin: 0;
+  font-weight: normal;
+  color: #5a5a7a;
   font-family: "DM Sans", sans-serif;
+  margin: 0;
   line-height: 1.4;
 }
 
 .skills-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  justify-content: flex-start;
   align-items: flex-start;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .skills-logo-left-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
   min-width: 90px;
@@ -481,6 +601,8 @@ hr {
 .skills-description-right-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 1rem;
   flex: 1;
   min-width: 0;
@@ -499,6 +621,7 @@ hr {
 
 .skills-row {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -507,6 +630,8 @@ hr {
 .skills-col {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 0.2em;
 }
 
@@ -527,6 +652,14 @@ hr {
   margin-bottom: 1.25rem;
 }
 
+.skill-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.3em;
+}
+
 .skills-description-container-blue {
   color: #516cf7;
 }
@@ -540,84 +673,7 @@ hr {
   .skills-description-right-container > * {
     flex: 1 1 180px;
   }
-}
-.footer {
-  text-align: center;
-  color: #888;
-  font-size: 0.97em;
-  margin: 2rem 0 1rem 0;
-}
-
-@media (min-width: 768px) {
-  .container {
-    display: flex;
-    gap: 2rem;
-  }
-  .profile--img {
-    width: 355.56px;
-    height: 161.62px;
-  }
-  .img-details {
-    padding-left: 1rem;
-  }
-  .desktop-view-right {
-    padding-top: 64.65px;
-    padding-right: 48.48px;
-    padding-left: 32.32px;
-    padding-bottom: 64.65px;
-  }
-  .profile--name,
-  .profile--role,
-  .profile--quotes,
-  .profile--quotes--author {
-    text-align: start;
-  }
-  .desktop-view-left {
-    min-width: 356px;
-    background: #f7f9fc;
-  }
-  .person--details {
-    display: flex;
-    flex-direction: column;
-  }
-  .desktop-expereience-wrapper {
-    display: flex;
-  }
-  .desktop-expereience-meta {
-    min-width: 300px;
-  }
-  .desktop-expereience-description {
-    min-width: 250px;
-    flex-shrink: inherit;
-  }
-  .education-list {
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .education-list .education-box {
-    flex: 1 1 0;
-    min-width: 220px;
-    max-width: 340px;
-  }
-}
-@media (max-width: 768px) {
-  .projects-list {
-    flex-direction: column;
-    gap: 1.2rem;
-    width: 763.64px;
-    height: 282.74px;
-    gap: 32.32px;
-  }
   .first--project-container {
     max-width: 100%;
-    min-width: 0;
-    flex: 1 1 100%;
-  }
-  .experience-title {
-    width: 698.99px;
-    height: 435.99px;
-    gap: 32.32px;
-    padding-bottom: 48.48px;
   }
 }/*# sourceMappingURL=index.css.map */

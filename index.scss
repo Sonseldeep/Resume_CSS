@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 $color-bg: #f7f8fa;
 $color-surface: #fff;
 $color-primary: #1976d2;
@@ -21,10 +27,62 @@ $border-radius-card: 10px;
 $shadow-main: 0 4px 24px rgba(0, 0, 0, 0.07);
 $shadow-card: 0 2px 8px rgba(0, 0, 0, 0.03);
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap > 0 {
+    gap: $gap;
+  }
+}
+
+@mixin hover-transform($scale: 1.03, $shadow: none, $bg: $color-bg) {
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+
+  &:hover {
+    background: $bg;
+    transform: scale($scale);
+    @if $shadow != none {
+      box-shadow: $shadow;
+    }
+    z-index: 1;
+  }
+}
+
+@mixin text-style(
+  $size,
+  $weight,
+  $color,
+  $spacing: 0,
+  $font-family: $font-primary
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  font-family: $font-family;
+  @if $spacing != 0 {
+    letter-spacing: $spacing;
+  }
+}
+
+@mixin responsive($point) {
+  @if $point == tablet {
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  } @else if $point == mobile-only {
+    @media (max-width: $breakpoint-tablet - 1) {
+      @content;
+    }
+  }
 }
 
 body {
@@ -39,11 +97,17 @@ body {
   background: $color-surface;
   border-radius: $border-radius-main;
   box-shadow: $shadow-main;
+
+  @include responsive(tablet) {
+    display: flex;
+    gap: 2rem;
+  }
 }
 
 section {
   padding-left: 1rem;
 }
+
 hr {
   border: none;
   border-top: 1.5px solid $color-border;
@@ -51,24 +115,22 @@ hr {
   margin: 2rem auto;
 }
 
-#social-title,
-#language-title,
-#contact-title {
-  color: #79819a;
-}
-
 .section-title {
-  color: #2e2e48;
+  color: $color-text-dark;
   font-size: 1.1rem;
   margin: 1.2rem 0 0.7rem 0;
   padding: 0;
   font-weight: 600;
 }
 
+#social-title,
+#language-title,
+#contact-title {
+  color: $color-text-light;
+}
+
 .profile-header {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  @include flex(column, flex-start, stretch);
   margin-bottom: 1.5rem;
 }
 
@@ -81,46 +143,52 @@ hr {
   border: none;
   display: block;
   max-width: 100%;
+
+  @include responsive(tablet) {
+    width: 355.56px;
+    height: 161.62px;
+  }
 }
 
 .img-details {
   text-align: center;
+
+  @include responsive(tablet) {
+    padding-left: 1rem;
+  }
 }
 
 .profile--name {
-  color: #2e2e48;
-  font-weight: 500;
-  font-size: 1.5rem;
+  @include text-style(1.5rem, 500, $color-text-dark, -2%);
   margin-bottom: 0.2em;
-  letter-spacing: -2%;
 }
 
 .profile--role {
-  color: $color-primary;
+  @include text-style(1.1rem, normal, $color-primary);
   margin-bottom: 0.7em;
-  font-size: 1.1rem;
 }
 
 .profile--quotes {
-  color: $color-text-medium;
-  font-weight: 500;
-  font-size: 18.18px;
+  @include text-style(18.18px, 500, $color-text-medium, 2%);
   margin: 0.5em 0 0 0;
   display: block;
   line-height: 24.24px;
-  letter-spacing: 2%;
 }
 
 .profile--quotes--author {
-  font-size: 12.12px;
-  color: $color-text-light;
-  font-weight: 400;
+  @include text-style(12.12px, 400, $color-text-light, 1%, $font-secondary);
   margin-top: 0.2em;
-  letter-spacing: 1;
   line-height: 16.16px;
-  font-family: $font-secondary;
   text-align: center;
-  letter-spacing: 1%;
+}
+
+@include responsive(tablet) {
+  .profile--name,
+  .profile--role,
+  .profile--quotes,
+  .profile--quotes--author {
+    text-align: start;
+  }
 }
 
 .person--details {
@@ -128,62 +196,45 @@ hr {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1.2rem;
+
+  @include responsive(tablet) {
+    @include flex(column);
+  }
 }
 
 .person--details-info {
-  display: flex;
-  align-items: center;
-  gap: 0.7em;
+  @include flex(row, flex-start, center, 0.7em);
   border-radius: 8px;
   padding: 0.7em 0.5em;
   min-width: 0;
-  transition: background 0.18s, transform 0.18s;
-
-  &:hover {
-    background: $color-bg;
-    transform: scale(1.03);
-  }
+  @include hover-transform();
 }
 
 .person--details-info-flex {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1em;
+  @include flex(column, flex-start, flex-start, 0.1em);
   line-height: 1.5;
 
   span {
-    font-size: 0.98em;
-    color: $color-text-light;
+    @include text-style(0.98em, 400, $color-text-light, 1%, $font-secondary);
     word-break: break-all;
     margin: 0;
-    font-family: $font-secondary;
-    letter-spacing: 1%;
-    font-weight: 400;
   }
+
   p {
-    font-family: $font-secondary;
-    letter-spacing: 0%;
-    font-weight: 500;
+    @include text-style(0.98em, 500, $color-text-medium, 0%, $font-secondary);
     line-height: 18.18px;
-    font-size: 0.98em;
-    color: $color-text-medium;
     margin: 0;
   }
 
   .contact--title {
-    color: $color-text-light;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 1%;
-    font-family: $font-secondary;
+    @include text-style(13px, 600, $color-text-light, 1%, $font-secondary);
     margin-bottom: 0.1em;
   }
+
   .contact--description,
   a {
-    color: #47516b;
-    font-weight: 500;
+    @include text-style(14.14px, 500, $color-text-medium);
     line-height: 18.18px;
-    font-size: 14.14px;
   }
 }
 
@@ -212,11 +263,14 @@ hr {
 }
 
 .projects-list {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  @include flex(row, flex-start, flex-start, 2rem);
   flex-wrap: wrap;
   width: 100%;
+
+  @include responsive(mobile-only) {
+    flex-direction: column;
+    gap: 32.32px;
+  }
 }
 
 .first--project-container {
@@ -228,17 +282,19 @@ hr {
   padding: 1rem 0.5rem;
   box-shadow: $shadow-card;
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  @include flex(column, flex-start, stretch, 0.8rem);
   word-break: break-word;
   overflow-wrap: anywhere;
+
+  @include responsive(mobile-only) {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
 }
 
 .project-top-flex {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  @include flex(row, flex-start, center, 1rem);
   margin-bottom: 0.7rem;
 
   img {
@@ -254,32 +310,21 @@ hr {
 }
 
 .project-title {
-  font-weight: 500;
-  font-family: $font-secondary;
+  @include text-style(16.16px, 500, $color-text-dark, 0%, $font-secondary);
   margin-bottom: 0.2em;
   line-height: 20.2px;
-  font-size: 16.16px;
-  color: $color-text-dark;
-  letter-spacing: 0%;
 }
 
 .project-subtitle {
-  color: $color-text-light;
-  font-size: 0.95em;
-  font-weight: 400;
-  font-family: $font-secondary, serif;
-  letter-spacing: 1%;
+  @include text-style(0.95em, 400, $color-text-light, 1%, $font-secondary);
   line-height: 18.18px;
 }
 
 .project-link a {
-  color: $color-secondary;
+  @include text-style(inherit, 600, $color-secondary, 0%, $font-accent);
   text-decoration: none;
-  font-weight: 600;
-  font-family: $font-accent;
   word-break: break-all;
   line-height: 20.2px;
-  letter-spacing: 0%;
 
   &:hover {
     text-decoration: underline;
@@ -287,9 +332,7 @@ hr {
 }
 
 .experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  @include flex(column, flex-start, stretch, 1.5rem);
   margin-bottom: 2rem;
 }
 
@@ -310,9 +353,7 @@ hr {
 }
 
 .experience-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.6em;
+  @include flex(row, flex-start, center, 0.6em);
   font-size: 0.97em;
   color: $color-text-subtle;
   margin-bottom: 0.3em;
@@ -328,9 +369,7 @@ hr {
 }
 
 .experience-role {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  @include flex(row, flex-start, center, 1rem);
   margin-bottom: 0.2em;
 }
 
@@ -344,41 +383,67 @@ hr {
 }
 
 .experience-title {
-  font-weight: 600;
+  @include text-style(1.08em, 600, $color-text-light);
   margin: 0 0 0.1em 0;
-  font-size: 1.08em;
-  color: $color-text-light;
 }
 
 .experience-company {
-  color: #555;
-  font-size: 0.97em;
+  @include text-style(0.97em, 500, #555);
   margin: 0;
-  font-weight: 500;
 }
 
 .experience-description {
-  color: $color-text-light;
-  font-size: 0.97em;
-  font-weight: 400;
+  @include text-style(0.97em, 400, $color-text-light);
   margin: 0.5em 0 0 0;
   line-height: 1.5;
 }
 
+@include responsive(tablet) {
+  .desktop-view-right {
+    padding: 64.65px 48.48px 64.65px 32.32px;
+  }
+
+  .desktop-view-left {
+    min-width: 356px;
+    background: #f7f9fc;
+  }
+
+  .desktop-expereience-wrapper {
+    display: flex;
+  }
+
+  .desktop-expereience-meta {
+    min-width: 300px;
+  }
+
+  .desktop-expereience-description {
+    min-width: 250px;
+    flex-shrink: inherit;
+  }
+}
+
 .education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  @include flex(column, flex-start, stretch, 1.2rem);
   margin-bottom: 2rem;
+
+  @include responsive(tablet) {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .education-box {
+      flex: 1 1 0;
+      min-width: 220px;
+      max-width: 340px;
+    }
+  }
 }
 
 .education-box {
   background: #f4f6fa;
   border-radius: $border-radius-card;
   padding: 1rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  @include flex(column, flex-start, stretch, 0.7rem);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.2s;
 
@@ -390,32 +455,24 @@ hr {
 }
 
 .logo-name-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  @include flex(row, flex-start, center, 0.7rem);
 }
 
 .education-name {
-  font-weight: 500;
-  color: $color-text-dark;
-  font-size: 1.05em;
+  @include text-style(1.05em, 500, $color-text-dark);
 }
 
 .education--title-date {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  @include flex(column, flex-start, flex-start, 0.2rem);
 }
 
 .education-title {
-  font-weight: 600;
-  color: #222;
+  @include text-style(inherit, 600, #222);
   margin: 0;
 }
 
 .education-date {
-  color: $color-text-subtle;
-  font-size: 0.97em;
+  @include text-style(0.97em, normal, $color-text-subtle);
   margin: 0;
 }
 
@@ -432,11 +489,8 @@ hr {
   border: 1.5px solid $color-border-light;
   border-radius: $border-radius-main;
   padding: 1.2rem 0.7rem 0.8rem 0.7rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex(column, center, center, 0.6rem);
   text-align: center;
-  gap: 0.6rem;
   box-shadow: 0 2px 10px rgba(25, 81, 210, 0.06);
   transition: box-shadow 0.2s cubic-bezier(0.4, 2, 0.6, 1), border-color 0.2s,
     transform 0.18s;
@@ -471,126 +525,25 @@ hr {
   }
 
   figcaption {
-    font-weight: 700;
-    color: $color-text-contrast;
-    font-size: 1.08em;
+    @include text-style(1.08em, 700, $color-text-contrast, 0.5px, $font-accent);
     margin-bottom: 0.1em;
-    letter-spacing: 0.5px;
-    font-family: $font-accent;
   }
 
-  //   p {
-  //     color: #5a5a7a;
-  //     font-size: 0.97em;
-  //     margin: 0;
-  //     font-family: $font-secondary;
-  //     line-height: 1.4;
-  //   }
-  // }
-
-  // .skills-wrapper {
-  //   display: flex;
-  //   flex-direction: row;
-  //   gap: 2.5rem;
-  //   align-items: stretch;
-  //   margin-bottom: 2rem;
-  // }
-
-  // .skills-logo-left-container {
-  //   display: flex;
-  //   min-width: 110px;
-  //   font-weight: 200;
-  //   font-size: 1.3rem;
-  //   letter-spacing: 1px;
-  // }
-
-  // .skills-description-right-container {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 1.3rem;
-  //   flex: 1;
-  //   min-width: 220px;
-  //   max-width: 380px;
-  // }
-
-  // .skills-row {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   gap: 2rem;
-  //   font-weight: 600;
-  //   font-size: 1.08rem;
-  //   color: $color-accent-purple;
-  //   background: $color-bg;
-  //   border-radius: 8px;
-  //   padding: 0.7rem 1rem;
-  // }
-
-  // .skills-col {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 0.2em;
-  //   font-size: 1.05rem;
-  //   font-weight: 500;
-  //   color: $color-accent-purple;
-  //   background: $color-bg;
-  //   border-radius: 8px;
-  //   padding: 0.7rem 1rem;
-  // }
-
-  // .skills-list-box {
-  //   background: $color-bg;
-  //   border-radius: $border-radius-card;
-  //   box-shadow: 0 2px 8px rgba(231, 84, 128, 0.08);
-  //   padding: 1rem 1.2rem;
-  //   margin-bottom: 0;
-  //   ul {
-  //     margin: 0;
-  //     color: $color-accent-purple;
-  //     padding-left: 1.2em;
-  //     list-style: disc;
-  //     font-size: 1rem;
-  //     li {
-  //       margin-bottom: 0.2em;
-  //     }
-  //   }
-  // }
-
-  // .skill-logo {
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 0.3em;
-  // }
-
-  // .skill-title {
-  //   margin-bottom: 1.25rem;
-  // }
-
   p {
-    color: #5a5a7a;
-    font-size: 0.97em;
+    @include text-style(0.97em, normal, #5a5a7a, 0, $font-secondary);
     margin: 0;
-    font-family: $font-secondary;
     line-height: 1.4;
   }
 }
 
-// --- Skills ---
-// Base styles for mobile and tablets
 .skills-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem; // Adjusted gap for better spacing
-  align-items: flex-start; // Aligns the logo and content to the top
+  @include flex(row, flex-start, flex-start, 1.5rem);
   margin-bottom: 2rem;
 }
 
 .skills-logo-left-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  min-width: 90px; // Adjusted for better flexibility
+  @include flex(column, flex-start, center, 0.5rem);
+  min-width: 90px;
   font-weight: 500;
   font-size: 1.1rem;
   color: $color-text-dark;
@@ -598,11 +551,9 @@ hr {
 }
 
 .skills-description-right-container {
-  display: flex;
-  flex-direction: column; // Stacks skill items vertically by default
-  gap: 1rem;
+  @include flex(column, flex-start, stretch, 1rem);
   flex: 1;
-  min-width: 0; // Prevents flexbox overflow issues
+  min-width: 0;
 }
 
 .skills-row,
@@ -617,16 +568,11 @@ hr {
 }
 
 .skills-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  @include flex(row, space-between, center, 1rem);
 }
 
 .skills-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2em;
+  @include flex(column, flex-start, stretch, 0.2em);
 }
 
 .skills-list-box {
@@ -646,11 +592,15 @@ hr {
   margin-bottom: 1.25rem;
 }
 
+.skill-logo {
+  @include flex(column, flex-start, stretch, 0.3em);
+}
+
 .skills-description-container-blue {
   color: #516cf7;
 }
 
-@media (min-width: 768px) {
+@include responsive(tablet) {
   .skills-description-right-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -660,90 +610,7 @@ hr {
   .skills-description-right-container > * {
     flex: 1 1 180px;
   }
-}
-
-.footer {
-  text-align: center;
-  color: $color-text-subtle;
-  font-size: 0.97em;
-  margin: 2rem 0 1rem 0;
-}
-
-@media (min-width: 768px) {
-  .container {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .profile--img {
-    width: 355.56px;
-    height: 161.62px;
-  }
-
-  .img-details {
-    padding-left: 1rem;
-  }
-  .desktop-view-right {
-    padding-top: 64.65px;
-    padding-right: 48.48px;
-    padding-left: 32.32px;
-    padding-bottom: 64.65px;
-  }
-
-  .profile--name,
-  .profile--role,
-  .profile--quotes,
-  .profile--quotes--author {
-    text-align: start;
-  }
-  .desktop-view-left {
-    min-width: 356px;
-    background: #f7f9fc;
-  }
-  .person--details {
-    display: flex;
-    flex-direction: column;
-  }
-  .desktop-expereience-wrapper {
-    display: flex;
-  }
-  .desktop-expereience-meta {
-    min-width: 300px;
-  }
-  .desktop-expereience-description {
-    min-width: 250px;
-    flex-shrink: inherit;
-  }
-  .education-list {
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    .education-box {
-      flex: 1 1 0;
-      min-width: 220px;
-      max-width: 340px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-list {
-    flex-direction: column;
-    gap: 1.2rem;
-    width: 763.64px;
-    height: 282.74px;
-    gap: 32.32px;
-  }
   .first--project-container {
     max-width: 100%;
-    min-width: 0;
-    flex: 1 1 100%;
-  }
-  .experience-title {
-    width: 698.99px;
-    height: 435.99px;
-    gap: 32.32px;
-    padding-bottom: 48.48px;
   }
 }
