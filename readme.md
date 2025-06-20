@@ -4,6 +4,12 @@ A modern, fully responsive resume template built with **HTML5** and **SCSS**. De
 
 ---
 
+## Check out the live demo of this resume template:
+
+[https://sonseldeep.github.io/Resume_CSS/](https://sonseldeep.github.io/Resume_CSS/)
+
+---
+
 ## 📋 Table of Contents
 
 - [Features](#features)
