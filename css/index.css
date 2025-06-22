@@ -62,7 +62,7 @@ hr {
   height: auto;
   border-radius: 0;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-bottom: 1rem;
   border: none;
   display: block;
@@ -213,7 +213,7 @@ hr {
   background: #79819a;
   padding: 4px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   display: inline-block;
 }
 .svg--size.no-circle {
@@ -227,7 +227,7 @@ hr {
   background: #d3d6e0;
   padding: 4px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   display: inline-block;
 }
 
@@ -284,7 +284,7 @@ hr {
   height: 32px;
   width: 32px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   display: block;
 }
 
@@ -382,7 +382,7 @@ hr {
   width: 40.4px;
   height: 40.4px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 8px;
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -510,7 +510,7 @@ hr {
   margin: 0;
 }
 
-.tools-grid {
+/* .tools-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.1rem;
@@ -574,7 +574,7 @@ hr {
   font-family: "DM Sans", sans-serif;
   margin: 0;
   line-height: 1.4;
-}
+} */
 
 .skills-wrapper {
   display: flex;
@@ -675,4 +675,4 @@ hr {
   .first--project-container {
     max-width: 100%;
   }
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
