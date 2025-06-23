@@ -314,7 +314,7 @@ hr {
 .project-link a {
   font-size: inherit;
   font-weight: 600;
-  color: #516cf7;
+  color: #a478e8;
   font-family: "Outfit", sans-serif;
   letter-spacing: 0%;
   text-decoration: none;
@@ -594,7 +594,7 @@ hr {
 }
 
 .skills-description-container-blue {
-  color: #516cf7;
+  color: #a478e8;
 }
 
 @media (min-width: 768px) {
@@ -678,7 +678,7 @@ hr {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(25, 118, 210, 0.15);
   background: linear-gradient(135deg, #f9fafd 50%, #dfe7fa 100%);
-  border-color: #516cf7;
+  border-color: #a478e8;
   z-index: 2;
 }
 .tool-card img {

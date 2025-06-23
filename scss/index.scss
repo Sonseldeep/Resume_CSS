@@ -7,7 +7,7 @@
 $color-bg: #f7f8fa;
 $color-surface: #fff;
 $color-primary: #1976d2;
-$color-secondary: #516cf7;
+$color-secondary: #a478e8;
 $color-accent-purple: #9251f7;
 $color-accent-pink: #e75480;
 $color-text-dark: #2e2e48;
@@ -79,7 +79,7 @@ $breakpoint-desktop: 1024px;
       @content;
     }
   } @else if $point == mobile-only {
-    @media (max-width: $breakpoint-tablet - 1) {
+    @media (max-width: #{ $breakpoint-tablet - 1 }) {
       @content;
     }
   }
@@ -596,7 +596,7 @@ hr {
 }
 
 .skills-description-container-blue {
-  color: #516cf7;
+  color: #a478e8;
 }
 
 @include responsive(tablet) {
@@ -614,6 +614,7 @@ hr {
   }
 }
 
+// Tools section with modern grid layout
 .tools {
   margin-bottom: 2rem;
 }
@@ -653,6 +654,7 @@ hr {
   }
 }
 
+// Enhanced tool card styling
 .tool-card {
   background: linear-gradient(135deg, #f7f9fc 60%, #e9effa 100%);
   border: 1px solid $color-border-light;
@@ -664,6 +666,7 @@ hr {
   min-width: 0;
   margin: 0;
 
+  // Apply special border radius to create visual interest
   &:nth-child(1) {
     border-top-left-radius: 16px;
   }
@@ -712,6 +715,7 @@ hr {
     line-height: 1.3;
   }
 
+  // Mobile-specific styling
   @include responsive(mobile-only) {
     padding: 0.6rem 0.4rem;
     border-radius: 10px;
@@ -733,6 +737,7 @@ hr {
   }
 }
 
+// Very small screen adjustments (under 375px)
 @media screen and (max-width: 374px) {
   .tools-grid {
     gap: 0.4rem;
